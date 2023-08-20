@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS */
+    body {
+      background-color: #f8f9fa;
+      background-image: url('/images/bg.jpg');
+    }
+    .jumbotron {
+     
+      background-size: cover;
+      color: white;
+    }
+    .feature-icon {
+      font-size: 2rem;
+    }
+    .feature-title {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  
+    
+    <div class="text-center  center-div mt-5" id="login">
+        <div class="container bg-info border-3 border-danger-subtle border py-5 mt-5">
+            <h3>Welcome To HomePage</h3>
+            <h5><%= locals.user? user:"User"%> </h5>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <script>
+      const history = window.history;
+
+      // Create a new history entry.
+      history.pushState({
+        isLoggedIn: true,
+      }, "Home page");
+      
+      // Replace the current history entry with the new one.
+      history.replaceState({
+        isLoggedIn: true,
+      }, "Home page");
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
